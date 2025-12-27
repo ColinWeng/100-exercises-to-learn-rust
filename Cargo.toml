@@ -12,3 +12,10 @@ resolver = "2"
 # regardless of the "global" setting for `overflow-checks` on the `dev` profile.
 [profile.dev.package.copy]
 overflow-checks = true
+
+
+# 核心配置：修改 dev profile，禁用溢出检查
+[profile.dev]
+overflow-checks = false  # 关键：关闭 dev 模式的溢出检查
+opt-level = 0            # 保留 dev 模式默认优化级别（可选，不影响核心）
+debug = true             # 保留调试信息（可选）
