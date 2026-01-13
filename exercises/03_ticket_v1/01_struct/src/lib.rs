@@ -5,9 +5,24 @@
 // It should also have a method named `is_available` that returns a `true` if the quantity is
 // greater than 0, otherwise `false`.
 
+struct Order {
+    price: i32,
+    quantity: i32
+}
+
+impl Order {
+    pub(crate) fn is_available(&self) -> bool {
+        if self.quantity > 0 {
+            true
+        } else {
+            false
+        }
+    }
+}
+
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use crate::Order;
 
     #[test]
     fn test_order_is_available() {
